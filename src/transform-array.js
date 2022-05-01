@@ -25,6 +25,7 @@ function transform(arr) {
     else if (value == '--discard-prev') arr.splice(index-1) ;
     else if (value ==  '--discard-next') arr.splice(index,2);
     else if (value == '--double-next') arr[index] == arr[index+1];
+
   }
   )
 }
