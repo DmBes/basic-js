@@ -16,9 +16,19 @@ const { NotImplementedError } = require('../extensions/index.js');
 function createDreamTeam(/* members */) {
     let arr = arguments[0];
     if (Array.isArray(arr)){
-        let f = arr.filter(x => typeof(x) == 'string').map((val) => val.replace(/[^a-zA-Z]/gi,',').toUpperCase()[0]).sort();
+
+        let f = arr.filter(x => typeof(x) == 'string')
+
+
+        const regex2 = new RegExp('/[^a-zA-Z]/gi');
+        let hghgh = f.map((item) => item.replaceAll(' ', ''));
+        let b = hghgh.map((val) => val.replace(regex2,',').toUpperCase()[0])
+
+
+    //    let b = f.map((val) => val.replace(/[^a-zA-Z]/gi,',').toUpperCase()[0])
+            let c = b.sort();
         //console.log(f)
-        if (f.length > 0) return f.join('');
+        if (f.length > 0) return c.join('');
     }
 
     return false;
